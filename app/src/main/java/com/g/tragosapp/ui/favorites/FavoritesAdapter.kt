@@ -9,7 +9,8 @@ import com.bumptech.glide.Glide
 import com.g.tragosapp.R
 import com.g.tragosapp.core.BaseViewHolder
 import com.g.tragosapp.data.model.Cocktail
-import com.g.tragosapp.databinding.TragosRowBinding
+import com.g.tragosapp.databinding.DrinkRowBinding
+
 
 /**
  * Created by Gastón Saillén on 08 August 2020
@@ -33,7 +34,7 @@ class FavoritesAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        val itemBinding = TragosRowBinding.inflate(LayoutInflater.from(context), parent, false)
+        val itemBinding = DrinkRowBinding.inflate(LayoutInflater.from(context), parent, false)
         val holder = MainViewHolder(itemBinding)
 
         holder.itemView.setOnClickListener {
@@ -64,7 +65,7 @@ class FavoritesAdapter(
     }
 
     private inner class MainViewHolder(
-        private val binding: TragosRowBinding
+        private val binding: DrinkRowBinding
     ) : BaseViewHolder<Cocktail>(binding.root) {
         override fun bind(item: Cocktail) = with(binding) {
             Glide.with(context)
@@ -74,15 +75,15 @@ class FavoritesAdapter(
             txtAlcholic.text = item.hasAlcohol
             txtTitulo.text = item.name
             txtDescripcion.text = item.description
-
-            if (item.isFav)
-            {
-                imgStar.setImageResource(R.drawable.ic_baseline_star_24)
-
-            }
-            else{
-                imgStar.setImageResource(R.drawable.ic_baseline_star_outline_24)
-            }
+            imgStar.setImageResource(R.drawable.ic_baseline_star_24)
+//
+//            if (item.isFav)
+//            {
+//
+//            }
+//            else{
+//                imgStar.setImageResource(R.drawable.ic_baseline_star_outline_24)
+//            }
 
         }
     }

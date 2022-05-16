@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/tragosDetalleFragment"
-        android:name="com.g.tragosapp.ui.Drinkdetails.CocktailDetailsFragment"
+        android:name="com.g.tragosapp.ui.Drinkdetails.DetailsFragment"
         android:label="Details"
         tools:layout="@layout/fragment_cocktail_details">
 

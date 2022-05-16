@@ -9,8 +9,7 @@ import com.bumptech.glide.Glide
 import com.g.tragosapp.R
 import com.g.tragosapp.core.BaseViewHolder
 import com.g.tragosapp.data.model.Cocktail
-import com.g.tragosapp.databinding.TragosRowBinding
-
+import com.g.tragosapp.databinding.DrinkRowBinding
 
 
 class MainAdapter(
@@ -32,7 +31,7 @@ class MainAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        val itemBinding = TragosRowBinding.inflate(LayoutInflater.from(context), parent, false)
+        val itemBinding = DrinkRowBinding.inflate(LayoutInflater.from(context), parent, false)
 
         val holder = MainViewHolder(itemBinding)
 
@@ -55,7 +54,7 @@ class MainAdapter(
     }
 
     private inner class MainViewHolder(
-        val binding: TragosRowBinding
+        val binding: DrinkRowBinding
     ) : BaseViewHolder<Cocktail>(binding.root) {
         override fun bind(item: Cocktail) = with(binding) {
 

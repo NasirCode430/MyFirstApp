@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CocktailDetailsFragment : Fragment(R.layout.fragment_cocktail_details) {
+class DetailsFragment : Fragment(R.layout.fragment_cocktail_details) {
     private val viewModel by activityViewModels<MainViewModel>()
 
     private lateinit var cocktail: Cocktail
