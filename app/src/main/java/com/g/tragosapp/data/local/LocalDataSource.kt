@@ -8,28 +8,28 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class LocalDataSource @Inject constructor(private val cocktailDao: CocktailDao) {
+class LocalDataSource @Inject constructor(private val drinkDao: DrinkDao) {
     suspend fun saveFavoriteCocktail(cocktail: Cocktail) {
-        return cocktailDao.saveFavoriteCocktail(cocktail.asFavoriteEntity())
+        return drinkDao.saveFavoriteCocktail(cocktail.asFavoriteEntity())
     }
 
     fun getFavoritesCocktails(): LiveData<List<Cocktail>> {
-        return cocktailDao.getAllFavoriteDrinksWithChanges().map { it.asDrinkList() }
+        return drinkDao.getAllFavoriteDrinksWithChanges().map { it.asDrinkList() }
     }
 
     suspend fun deleteCocktail(cocktail: Cocktail) {
-        return cocktailDao.deleteFavoriteCoktail(cocktail.asFavoriteEntity())
+        return drinkDao.deleteFavoriteCoktail(cocktail.asFavoriteEntity())
     }
 
     suspend fun saveCocktail(cocktail: CocktailEntity) {
-        cocktailDao.saveCocktail(cocktail)
+        drinkDao.saveCocktail(cocktail)
     }
 
     suspend fun getCachedCocktails(cocktailName: String): Resource<List<Cocktail>> {
-        return Resource.Success(cocktailDao.getCocktails(cocktailName).asCocktailList())
+        return Resource.Success(drinkDao.getCocktails(cocktailName).asCocktailList())
     }
 
     suspend fun isCocktailFavorite(cocktail: Cocktail): Boolean {
-        return cocktailDao.getCocktailById(cocktail.cocktailId) != null
+        return drinkDao.getCocktailById(cocktail.cocktailId) != null
     }
 }

@@ -7,7 +7,7 @@ import com.g.tragosapp.data.model.CocktailEntity
 import kotlinx.coroutines.flow.Flow
 
 
-interface CocktailRepository {
+interface DrinkRepository {
     suspend fun getCocktailByName(cocktailName: String): Flow<Resource<List<Cocktail>>>
     suspend fun saveFavoriteCocktail(cocktail: Cocktail)
     suspend fun isCocktailFavorite(cocktail: Cocktail): Boolean

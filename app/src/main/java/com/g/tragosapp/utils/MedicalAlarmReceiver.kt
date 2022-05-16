@@ -15,7 +15,6 @@ import com.g.tragosapp.R
 
 import com.g.tragosapp.application.MainActivity
 import com.g.tragosapp.data.model.Cocktail
-import com.g.tragosapp.domain.CocktailRepository
 
 import java.lang.NullPointerException
 import java.util.*

@@ -5,6 +5,11 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1095" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_start.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/favorite_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_cocktail_details.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/tragos_row.xml" value="0.1859375" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.16822916666666668" />
       </map>
     </option>

@@ -8,7 +8,7 @@ import com.g.tragosapp.data.model.FavoritesEntity
 
 
 @Dao
-interface CocktailDao {
+interface DrinkDao {
 
     @Query("SELECT * FROM favoritesTable")
     suspend fun getAllFavoriteDrinks(): List<FavoritesEntity>

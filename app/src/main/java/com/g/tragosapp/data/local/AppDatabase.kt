@@ -8,5 +8,5 @@ import com.g.tragosapp.data.model.FavoritesEntity
 
 @Database(entities = [FavoritesEntity::class, CocktailEntity::class],version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun cocktailDao(): CocktailDao
+    abstract fun cocktailDao(): DrinkDao
 }

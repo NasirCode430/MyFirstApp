@@ -5,15 +5,14 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.g.tragosapp.application.ToastHelper
 import com.g.tragosapp.core.Resource
-import com.g.tragosapp.domain.CocktailRepository
+import com.g.tragosapp.domain.DrinkRepository
 import com.g.tragosapp.data.model.Cocktail
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
 class MainViewModel @ViewModelInject constructor(
-    private val repository: CocktailRepository,
+    private val repository: DrinkRepository,
     private val toastHelper: ToastHelper,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {

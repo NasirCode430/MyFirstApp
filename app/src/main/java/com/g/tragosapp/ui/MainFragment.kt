@@ -1,5 +1,8 @@
 package com.g.tragosapp.ui
 
+import android.annotation.SuppressLint
+import android.app.ActionBar
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -11,12 +14,15 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.g.tragosapp.R
+import com.g.tragosapp.application.MainActivity
 import com.g.tragosapp.core.Resource
 import com.g.tragosapp.data.model.Cocktail
+import com.g.tragosapp.databinding.ActivityStartBinding
 import com.g.tragosapp.databinding.FragmentMainBinding
 import com.g.tragosapp.presentation.MainViewModel
 import com.g.tragosapp.utils.*
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainFragment : Fragment(R.layout.fragment_main),
@@ -24,11 +30,18 @@ class MainFragment : Fragment(R.layout.fragment_main),
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var mainAdapter: MainAdapter
     private lateinit var binding:FragmentMainBinding
+    private lateinit var binding2:ActivityStartBinding
 
+
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-
+        (activity as MainActivity?)?.getSupportActionBar()?.setTitle(R.string.title_home)
+        val bar: ActionBar? = activity?.getActionBar()
+        bar?.setBackgroundDrawable(ColorDrawable(R.color.grey))
+//        binding.toolbar.setBackgroundColor(R.color.grey)
+//        binding.toolbar.setTitle("Drink Recipies")
         mainAdapter = MainAdapter(requireContext(), this)
     }
 
@@ -111,3 +124,5 @@ class MainFragment : Fragment(R.layout.fragment_main),
 //        )
     }
 }
+
+

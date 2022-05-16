@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">CocktailApp</string>
-    <string name="search_no_results">No cocktails found</string>
+    <string name="app_name">DrinkApp</string>
+    <string name="search_no_results">No Drink found</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Favorites</string>
     <string name="search_by_name">Search by Name</string>

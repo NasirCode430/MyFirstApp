@@ -19,10 +19,10 @@ import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 @ActivityRetainedScoped
-class DefaultCocktailRepository @Inject constructor(
+class DefaultDrinkRepository @Inject constructor(
     private val networkDataSource: NetworkDataSource,
     private val localDataSource: LocalDataSource
-) : CocktailRepository {
+) : DrinkRepository {
 
     override suspend fun getCocktailByName(cocktailName: String): Flow<Resource<List<Cocktail>>> =
         callbackFlow {

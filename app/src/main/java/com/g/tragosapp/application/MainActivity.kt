@@ -1,5 +1,6 @@
 package com.g.tragosapp.application
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -56,11 +57,14 @@ class MainActivity : AppCompatActivity() {
 //    }
 
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//        binding.toolbar.setBackgroundColor(R.color.grey)
+
 
         setAlarm()
 
